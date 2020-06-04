@@ -1,18 +1,16 @@
-﻿  stdafx.cpp
-  OpenCVApplication.cpp
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(11): warning C4091: 'typedef ': ignored on left of 'RLE_Component' when no variable is declared
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(361): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(368): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\try_grayscale_image_jpeg\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(378): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  common.cpp
-  Generating Code...
-  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\try_grayscale_image_jpeg\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.exe
-  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\try_grayscale_image_jpeg\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.pdb (Full PDB)
+﻿  OpenCVApplication.cpp
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(11): warning C4091: 'typedef ': ignored on left of 'RLE_Component' when no variable is declared
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(51): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(381): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(388): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(395): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(398): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.exe
+  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.pdb (Full PDB)
   OpenCV\dll\Debug\opencv_ffmpeg310_64.dll
   OpenCV\dll\Debug\opencv_world310d.dll
           2 file(s) copied.
