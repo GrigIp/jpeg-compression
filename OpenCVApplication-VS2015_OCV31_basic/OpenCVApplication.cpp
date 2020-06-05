@@ -32,49 +32,37 @@ Mat dctTransformAndQuantize(Mat src) {
 	int width = dst.cols;
 
 	float ci, cj, dct, sum;
-	//int counter = 0;
-	//std::cout << "DCT MAT" << "\n";
+
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
-			//std::cout << i << ' ' << j << '\n';
+
 			if (i == 0) {
-				ci = 1 / sqrt(height);
+				ci = sqrt(1.0 / 8);
 			}
 			else {
-				ci = sqrt(2) / sqrt(height);
+				ci = sqrt(2.0/8);
 			}
 
 			if (j == 0) {
-				cj = 1 / sqrt(width);
+				cj =  sqrt(1.0/8);
 			}
 			else {
-				cj = sqrt(2) / sqrt(width);
+				cj = sqrt(2.0/8);
 			}
-			//std::cout << ci << ' ' << cj << '\n';
+
 			sum = 0;
 			for (int k = 0; k < height; k++) {
 				for (int l = 0; l < width; l++) {
 					dct = (float)(src.at<char>(k, l)) *
 						cos((2 * k + 1) * i * pi / (2 * height)) *
 						cos((2 * l + 1) * j * pi / (2 * width));
-					//std::cout << dct<<' ' << (float)(src.at<char>(k, l) + 128)* cos((2 * k + 1) * i * pi / (2 * height)) * cos((2 * l + 1) * j * pi / (2 * width)) << '\n';
+
 					sum = sum + dct;
 				}
 			}
 			dst.at<char>(i, j) = (char)round((ci * cj * sum) / (quantizationMat.at<float>(i, j) ));
-			//std::cout << sum<<' '<<ci<<' '<<cj<<' '<<ci*cj*sum<<' '<<ci*cj*sum<<'\n';
-			//std::cout << ci*cj*sum << ' ';
 		}
-		//std::cout << '\n';
 	}
-
-	/*for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
-			std::cout << (int)dst.at<char>(i, j) << ' ';
-		}
-		std::cout << '\n';
-	}
-	std::cout << '\n' << '\n' << '\n';*/
 
 	return dst;
 }
@@ -281,8 +269,6 @@ std::vector<RLE_Component> runLengthEncode(char arr[]) {
 std::vector<std::vector<RLE_Component>> compress(Mat src)
 {		
 	
-	//Mat srcYCrCb;
-	//cv::cvtColor(src, srcYCrCb, cv::COLOR_BGR2YCrCb);
 
 	int height = src.rows;
 	int width = src.cols;
@@ -301,7 +287,6 @@ std::vector<std::vector<RLE_Component>> compress(Mat src)
 					if (ii < height && jj < width) {
 
 						imageBlock.at<char>(iii, jjj) = (char)(src.at<uchar>(ii, jj) - 128);
-						//imageBlock.at<char>(iii, jjj) = (char)(srcYCrCb.at<uchar>(ii, jj) - 128);
 					}
 					else {
 	
@@ -363,7 +348,6 @@ Mat dequantize(Mat src) {
 }
 
 Mat inverseDct(Mat src) {
-	//Mat dst = Mat::zeros(8, 8, CV_32FC1);
 	Mat dst = Mat::zeros(8, 8, CV_8U);
 
 	int height = src.rows;
@@ -395,7 +379,7 @@ Mat inverseDct(Mat src) {
 						cos((float)((j + 0.5)*jj*pi) / 8.0);
 				}
 			}
-			dst.at<uchar>(i, j) = (uchar)((char)roundf((2*sum)/sqrt(height*width)) + 128);
+			dst.at<uchar>(i, j) = (uchar)(round(sum) + 128);
 		}
 	}
 
@@ -416,12 +400,7 @@ Mat decompress(std::vector<std::vector<RLE_Component>> rleComponents, Size size)
 
 			Mat quantizedMat = zigZagReverseTraversal(zigZagArr);
 			Mat dctMat = dequantize(quantizedMat);
-			/*for (int ii = 0; ii < 8; ii++) {
-				for (int jj = 0; jj < 8; jj++) {
-					std::cout << dctMat.at<float>(ii, jj) << " ";
-				}
-				std::cout << '\n';
-			}*/
+
 			Mat imageBlock = inverseDct(dctMat);
 
 			int ii = i;
@@ -442,10 +421,6 @@ Mat decompress(std::vector<std::vector<RLE_Component>> rleComponents, Size size)
 			std::cout << i << "--" << j << "\n";
 		}
 	}
-	//Mat imageRGB;
-	//cv::cvtColor(image, imageRGB, cv::COLOR_YCrCb2BGR);
-	
-	//return imageRGB;
 	return image;
 }
 
@@ -456,78 +431,13 @@ int main()
 	char fname[MAX_PATH];
 	while (openFileDlg(fname))
 	{
-		Mat src = imread(fname);
-		Mat srcYCrCb;
-		/*cv::cvtColor(src, srcYCrCb, cv::COLOR_BGR2YCrCb);
-		Mat srcY = Mat::zeros(srcYCrCb.size(), CV_8UC3);
-		for (int i = 0; i < srcYCrCb.rows; i++) {
-			for (int j = 0; j, srcYCrCb.cols; j++) {
-				srcY.at<Vec3b>(i,j) =  srcYCrCb.at<Vec3b>(i, j);
-			}
-		}
-		/*uchar data[8][8] = {
-			{ 52, 55, 61, 66, 70, 61, 64, 73 },
-			{ 63, 59, 55, 90, 109, 85, 69, 72 },
-			{ 62, 59, 68, 113, 144, 104, 66, 73 },
-			{ 63, 58, 71, 122, 154, 106, 70, 69 },
-			{ 67, 61, 68, 104, 126, 88, 68, 70 },
-			{ 79, 65, 60, 70, 77, 68, 58, 75 },
-			{ 85, 71, 64, 59, 55, 61, 65, 83 },
-			{ 87, 79, 69, 68, 65, 76, 78, 94 }
-		};*/
-
-		/*uchar data[8][8] = {
-			{ 141, 31, 177, 69, 27, 188, 45, 119 },
-			{ 161, 52, 127, 53, 36, 16, 102, 165 },
-			{ 8, 37, 137, 144, 42, 220, 34, 6 },
-			{ 157, 48, 113, 163, 158, 239, 7, 215 },
-			{ 92, 10, 31, 106, 146, 252, 240, 143 },
-			{ 12, 162, 125, 52, 13, 219, 77, 218 },
-			{ 125, 72, 218, 242, 238, 201, 75, 89 },
-			{ 49, 137, 223, 21, 186, 131, 85, 114 }
-		};*/
-
-	/*uchar data[8][8] = { { 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 },
-	{ 255, 255, 255, 255, 255, 255, 255, 255 } };*/
-
-		//Mat src = Mat(8, 8,CV_8U, data);
+		Mat src = imread(fname, CV_LOAD_IMAGE_GRAYSCALE);
+		
 		Size size = src.size();
 		std::vector<std::vector<RLE_Component>> rleComponents = compress(src);
 
-		/*for (std::vector<std::vector<RLE_Component>>::iterator itComponents = rleComponents.begin(); itComponents != rleComponents.end(); ++itComponents) {
-			for (std::vector<RLE_Component>::iterator itComponent = itComponents->begin(); itComponent != itComponents->end(); ++itComponent) {
-				if (itComponent->occurence == 1) {
-					std::cout << (int)itComponent->value << " ";
-				}
-				else {
-					std::cout << '{' << (int)itComponent->occurence << 'x' << (int)itComponent->value << '}' << " ";
-				}
-			}
-			std::cout << std::endl << std::endl << std::endl;
-		}*/
-
-		/*for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				std::cout << (int)src.at<uchar>(i, j) - 128 << ' ';
-			}
-			std::cout << '\n';
-		}*/
-		//std::cout << '\n'<<'\n'<<'\n';
 		Mat dst = decompress(rleComponents, size);
-		//Mat dst;
 
-		/*for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				std::cout << (int)dst.at<uchar>(i, j) << ' ';
-			}
-			std::cout << '\n';
-		}*/
 		imshow("original", src);
 		imshow("After Compression and Decompression", dst);
 		waitKey();

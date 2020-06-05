@@ -1,17 +1,16 @@
 ﻿  OpenCVApplication.cpp
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(11): warning C4091: 'typedef ': ignored on left of 'RLE_Component' when no variable is declared
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(44): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(51): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(381): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(388): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(391): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(395): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(398): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.exe
-  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.pdb (Full PDB)
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(11): warning C4091: 'typedef ': ignored on left of 'RLE_Component' when no variable is declared
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(365): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(372): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(375): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\backup-jpeg\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(379): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\backup-jpeg\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.exe
+  OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\backup-jpeg\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.pdb (Full PDB)
   OpenCV\dll\Debug\opencv_ffmpeg310_64.dll
   OpenCV\dll\Debug\opencv_world310d.dll
           2 file(s) copied.
