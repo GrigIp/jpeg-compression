@@ -7,6 +7,7 @@ c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\open
 c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(381): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(388): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(391): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(395): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\grig\desktop\jpeg-compression\opencvapplication-vs2015_ocv31_basic\opencvapplication.cpp(398): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   OpenCVApplication.vcxproj -> C:\Users\grig\Desktop\jpeg-compression\OpenCVApplication-VS2015_OCV31_basic\x64\Debug\OpenCVApplication.exe
